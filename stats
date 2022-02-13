@@ -1,0 +1,10 @@
+clear
+
+tree ./ -P "*.$1"
+
+linesOfCode=$(( find . -name "*.$1" -print0 | xargs -0 cat ) | wc -l)
+
+echo ""
+echo "Lines of code: ${linesOfCode}"
+
+read
